@@ -11,6 +11,10 @@ import Registration from "./components/Registration/Registration";
 import AdminHome from "./components/admin/AdminHome";
 import ModeratorHome from "./components/moderator/ModeratorHome";
 import PublicHome from "./components/public/PublicHome";
+import CreateQuiz from "./components/moderator/CreateQuiz";
+import ViewQuiz from "./components/moderator/ViewQuiz";
+import ViewQuestion from "./components/moderator/ViewQuestion";
+import UpdateQuestian from "./components/moderator/UpdateQuestian";
 
 
 
@@ -44,7 +48,11 @@ const  App=()=> {
         <Route path="/login" element={<Login/>} />
         <Route path="/adminhome" element={<AdminHome/>} />
         <Route path="/moderatorhome" element={<ModeratorHome/>} />
-        <Route path="publichome" element ={<PublicHome/>} />
+        <Route path="/publichome" element ={<PublicHome/>} />
+        <Route path="/createQuiz" element={<CreateQuiz/>} />
+        <Route path="/viewQuiz" element={<ViewQuiz/>} />
+        <Route path="/viewquestion" element={<ViewQuestion/>} />
+        <Route path="/updatequestion" element={<UpdateQuestian/>} />
      
       </Routes>
       

@@ -4,6 +4,7 @@ const cors = require('cors');
 
 // router
 const userRegRoutes = require('./router/UserRouter');
+const quizRouters = require('./router/QuizQuestion');
 
 const app = new express();
 
@@ -25,6 +26,8 @@ app.use(userRegRoutes);
 
 const tagRouter=require('./router/addtags')
 app.use('/',tagRouter);
+
+app.use(quizRouters);
 
 // port
 app.listen(4010,()=>{

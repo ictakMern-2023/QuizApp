@@ -107,6 +107,16 @@ export default function Main() {
 									</ListItemButton>
 								</Link>
 							</ListItem>
+							<ListItem disablePadding>
+								<Link to="/viewallPending" style={{ textDecoration: 'none', color: 'inherit' }}>
+									<ListItemButton>
+										<ListItemIcon>
+											<GroupIcon />
+										</ListItemIcon>
+										<ListItemText primary="Approve Quiz" />
+									</ListItemButton>
+								</Link>
+							</ListItem>
 
 							<ListItem disablePadding>
 								<Link to="/addtags" style={{ textDecoration: 'none', color: 'inherit' }}>

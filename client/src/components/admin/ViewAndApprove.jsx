@@ -2,6 +2,7 @@ import { Box, Button, Card, CardActions, CardContent, FormControlLabel, Radio, R
 import React, { useEffect, useState } from "react";
 import { useLocation,useNavigate } from "react-router-dom";
 import axios from 'axios';
+import PublicHeader from '../Header/PublicHeader';
 
 
 const ViewAndApprove =()=>{
@@ -17,6 +18,7 @@ const ViewAndApprove =()=>{
                 const quiz = res.data.find((quizItem) => quizItem._id === id);
                 if (quiz) {
                     setQuizData(quiz);
+                    console.log(quizData);
                   
                 }
             })
@@ -65,6 +67,7 @@ const ViewAndApprove =()=>{
         })
     }
     return(
+         
         <div style={{display:'flex',justifyContent:'center',alignItems:'center',minHeight:'100vh',backgroundColor:'#c71585'}}>
            <Box
                 display='flex'

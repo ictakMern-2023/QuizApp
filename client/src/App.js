@@ -17,6 +17,8 @@ import ViewQuestion from "./components/moderator/ViewQuestion";
 import UpdateQuestian from "./components/moderator/UpdateQuestian";
 import ViewAndApprove from "./components/admin/ViewAndApprove";
 import ViewAllPending from "./components/admin/ViewAllPending";
+import AttemptQuiz from "./components/public/AttemptQuiz";
+import Result from "./components/public/Result";
 
 
 
@@ -57,6 +59,8 @@ const  App=()=> {
         <Route path="/updatequestion" element={<UpdateQuestian/>} />
         <Route path="/viewallPending" element={<ViewAllPending/>} />
         <Route path="/viewAndApprove" element={<ViewAndApprove/>} />
+        <Route path="/attemptquiz" element={<AttemptQuiz />} />
+        <Route path='/result' element={<Result />} />
      
       </Routes>
       

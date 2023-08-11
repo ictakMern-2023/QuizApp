@@ -11,13 +11,8 @@ const ViewAllPending = () => {
     useEffect(()=>{
         axios.get("http://localhost:4010/quiz")
         .then((res)=>{
-            const quizdt = res.data.find((quizItem)=>quizItem.status === 'pending');
-            if(quizdt)
-            {
-                console.log(res.data);
-                setDt(res.data);
-                console.log("appp");
-            }
+            const quizdt = res.data.filter((quizItem)=>quizItem.status === 'pending');
+            setDt(quizdt);
            
         })
         .catch((err)=>{

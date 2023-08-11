@@ -13,6 +13,11 @@ const questionSchema = new mongoose.Schema({
 });
 
 const qiuzSchema = new mongoose.Schema({
+    userId:{
+        type:String,
+        require:true
+    },
+
     topic:{
         type:String,
         require:true

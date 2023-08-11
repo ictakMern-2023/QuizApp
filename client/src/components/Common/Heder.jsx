@@ -1,14 +1,19 @@
 import { AppBar, Button, Toolbar, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useLocation } from 'react-router-dom';
 
-const Header = () => {
+
+const Header = (probs) => {
   const [buttonClicked, setButtonClicked] = useState(null);
 
   const handleButtonClick = (buttonType) => {
     setButtonClicked(buttonType);
     
   };
+
+  const location = useLocation();
+
+
 
   return (
     <div>
@@ -17,6 +22,7 @@ const Header = () => {
           backgroundColor: '#c71585'
         }}
       >
+        <h1>{probs.username}</h1>
         <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <Typography

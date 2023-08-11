@@ -12,8 +12,13 @@ import {
 import axios from 'axios';
 
 
+const storedUserId = localStorage.getItem("email");
+
+const parsedUserId = storedUserId ? JSON.parse(storedUserId).email : null;
+
 
 const CreateQuiz = () => {
+
   const [topic, setTopic] = useState('');
  const [sub , setsub ] = useState('');
    const [duration, setDuration] = useState('');
@@ -63,12 +68,15 @@ const handleSubmit = async (event) => {
     console.log(sub);
     try {
       const quizData = {
+        userId: parsedUserId,
         topic,
         sub,
         duration,
         questions,
         status:'pending',
+
       };
+      console.log(parsedUserId);
   
       // Send the quiz data to the backend
       await axios.post("http://localhost:4010/quizQuestion", quizData)

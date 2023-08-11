@@ -53,7 +53,7 @@ const  App=()=> {
         <Route path="/adminhome" element={<AdminHome/>} />
         <Route path="/moderatorhome" element={<ModeratorHome/>} />
         <Route path="/publichome" element ={<PublicHome/>} />
-        <Route path="/createQuiz" element={<CreateQuiz/>} />
+        <Route path="/createQuiz" element={<CreateQuiz />} />
         <Route path="/viewQuiz" element={<ViewQuiz/>} />
         <Route path="/viewquestion" element={<ViewQuestion/>} />
         <Route path="/updatequestion" element={<UpdateQuestian/>} />

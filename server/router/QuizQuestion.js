@@ -4,8 +4,9 @@ const quizModel = require('../model/QuizQuestion');
 
 quizRouter.post('/quizQuestion',async(req,res)=>{
     try{
-        const {topic,sub,duration,questions,status } = req.body;
+        const {userId,topic,sub,duration,questions,status } = req.body;
         const quiz = new quizModel({
+            userId,
             topic,
             sub,
             duration,

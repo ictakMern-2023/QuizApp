@@ -26,7 +26,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 const drawerWidth = 240;
 
-export default function ModeratorMain() {
+export default function ModeratorMain(props) {
 	const [customerOptionsVisible, setCustomerOptionsVisible] = React.useState(false);
 
 	const handleCustomerClick = () => {
@@ -115,7 +115,7 @@ export default function ModeratorMain() {
                                <Link to="/createQuiz" style={{ textDecoration: 'none', color: 'inherit' }}>
                                    <ListItemButton>
                                        <ListItemIcon>
-                                           <AddIcon />
+                                           <AddIcon username={props.email}/>
                                        </ListItemIcon>
                                        <ListItemText primary="Create Quiz" />
                                    </ListItemButton>

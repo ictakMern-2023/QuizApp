@@ -2,6 +2,7 @@ import { Box, Button, Card, CardContent, CardHeader, CardMedia, Typography } fro
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import AdminHeader from '../Header/AdminHeader';
 
 const ViewAllPending = () => {
     const [dt,setDt] = useState([]);
@@ -36,8 +37,10 @@ const ViewAllPending = () => {
    
 
   return (
-    <div style={{ backgroundColor: 'purple', display: 'flex', flexDirection: 'column', alignItems: 'center',  minHeight: '100vh' }}>
-      <Typography variant='h2' style={{ marginBottom: '20px',color:'#ffffff' }}>Approve Q</Typography>
+    <>
+      <AdminHeader/>
+      <div style={{ backgroundColor: 'purple', display: 'flex', flexDirection: 'column', alignItems: 'center',  minHeight: '100vh',paddingTop:'70px' }}>
+      <Typography variant='h3' style={{ marginBottom: '20px',color:'#ffffff' }}>Approve Quiz</Typography>
 
       <Box
         style={{
@@ -74,6 +77,7 @@ const ViewAllPending = () => {
         </div>
       </Box>
     </div>
+    </>
   );
 };
 

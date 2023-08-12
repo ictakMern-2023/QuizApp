@@ -11,8 +11,8 @@ import axios from 'axios';
 //   Box,
 //   IconButton,
 // } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import { useHistory } from 'react-router-dom';
+
+import Header from '../Common/Heder';
 
 
 
@@ -85,6 +85,8 @@ const Login = () => {
     }
 
   return (
+    <>
+    <Header/>
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', backgroundColor: '#C7EAE8' }}>
     <Box sx={{ bgcolor: '#fffaf0', height: '40vh', width: '40vh', padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center',paddingTop:'40px' }}>
         <Typography variant='h5'>Login</Typography>
@@ -135,6 +137,7 @@ const Login = () => {
       </DialogContent>
     </Dialog>
 </div>
+    </>
   )
 }
 

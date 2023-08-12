@@ -10,12 +10,11 @@ import {
   Typography,
 } from '@mui/material';
 import axios from 'axios';
+import ModeratorHeader from '../Header/ModeratorHeader';
 
+// get userFrom the local storage
 
-const storedUserId = localStorage.getItem("email");
-
-const parsedUserId = storedUserId ? JSON.parse(storedUserId).email : null;
-
+const parsedUserId = localStorage.getItem("email");
 
 const CreateQuiz = () => {
 
@@ -63,8 +62,10 @@ const CreateQuiz = () => {
 //     setQuestions([{ question: '', options: ['', '', '', ''], correctAnswer: '' }]);
 //   };
 
+
 const handleSubmit = async (event) => {
     event.preventDefault();
+    // console.log(JSON.parse(localStorage.getItem("email")));
     console.log(sub);
     try {
       const quizData = {
@@ -76,7 +77,7 @@ const handleSubmit = async (event) => {
         status:'pending',
 
       };
-      console.log(parsedUserId);
+      
   
       // Send the quiz data to the backend
       await axios.post("http://localhost:4010/quizQuestion", quizData)
@@ -110,8 +111,9 @@ const handleSubmit = async (event) => {
 
   return (
     <>
+    <ModeratorHeader/>
       {/* <ModeratorMain/> */}
-      <div className='quiz-app' style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center',backgroundColor:`#cfe8fc` }}>
+      <div className='quiz-app' style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center',backgroundColor:`#cfe8fc`,paddingTop:'70px' }}>
         <Typography variant='h4'fontWeight='600'>Create Quiz</Typography>
         <Box
           display='flex'
@@ -142,7 +144,7 @@ const handleSubmit = async (event) => {
                 </Select>
               </FormControl>
             </div>
-            <div className='form-group'>
+            {/* <div className='form-group'>
               <label>Sub:</label>
               <TextField
                 fullWidth
@@ -151,6 +153,26 @@ const handleSubmit = async (event) => {
                 onChange={(e)=> setsub(e.target.value)}
                 required
               />
+            </div> */}
+              <div className='form-group'>
+              <label>Sub:</label>
+              <FormControl fullWidth sx={{ mb: 3 }}>
+                <InputLabel id="tag-label">Sub</InputLabel>
+                <Select
+                  labelId="tag-label"
+                  id="topic-select"
+                  label="Topic"
+                  value={sub}
+                  onChange={(e) => setsub(e.target.value)}
+                  sx={{ my: 2 }}
+                >
+                 {tagdata.map((val,i)=>(
+                  val.modules.map((module,index)=>(
+                    <MenuItem key={index} value={module.moduleName}>{module.moduleName}</MenuItem>
+                  ))
+                 ))}
+                </Select>
+              </FormControl>
             </div>
             <div className='form-group'>
               <label>Time Duration:</label>

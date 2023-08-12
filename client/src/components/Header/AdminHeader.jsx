@@ -4,8 +4,8 @@ import { useLocation } from 'react-router-dom';
 
 const AdminHeader = () => {
 
-  const location = useLocation();
-  const {email} = location.state;
+  // const location = useLocation();
+  // const {email} = location.state;
 
   return (
     <div>
@@ -27,7 +27,7 @@ const AdminHeader = () => {
               paddingLeft: '20px',
             }}
           >
-            
+            Quiz Application
           </Typography>
         </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -38,7 +38,7 @@ const AdminHeader = () => {
 
           }}
           >
-            User :{email}
+            Admin : admin@gmail.com
           </Typography>
 
         </div>

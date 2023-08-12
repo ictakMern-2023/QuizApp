@@ -1,12 +1,11 @@
 import React from 'react'
 import { AppBar, Toolbar, Typography } from '@mui/material';
-import { useLocation } from 'react-router-dom';
+
 
 
 const PublicHeader = () => {
 
-  const location = useLocation();
-  const {email} = location.state;
+ const UserId = localStorage.getItem("email");
 
   return (
     <div>
@@ -28,7 +27,7 @@ const PublicHeader = () => {
               paddingLeft: '20px',
             }}
           >
-            QuiZZ APP
+            Quizz Application
           </Typography>
         </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -39,7 +38,7 @@ const PublicHeader = () => {
 
           }}
           >
-            User :{email}
+            User :{UserId}
           </Typography>
 
         </div>

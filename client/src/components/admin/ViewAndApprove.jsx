@@ -41,7 +41,7 @@ const ViewAndApprove =()=>{
         )
         .then((res) => {
             console.log('Quiz Updated:', res.data);
-            alert("updated Successfully");
+            alert("Approved Successfully");
            naviagate('/viewallPending');
             
         })
@@ -80,6 +80,7 @@ const ViewAndApprove =()=>{
                 <div style={{ display: 'grid', gap: '20px', paddingBottom: '60px', paddingTop: '30px', padding: '20px' }}>
                 <Card>
                         <CardContent>
+                        <Typography variant='h6' style={{fontWeight:'bold'}}>Quiz Created by  :- {quizData.userId}</Typography>
                             <Typography variant='h6'>{quizData.topic}</Typography>
                             <Typography variant='body1'>{quizData.sub}</Typography>
                         </CardContent>

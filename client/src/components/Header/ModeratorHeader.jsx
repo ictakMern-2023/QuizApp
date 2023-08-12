@@ -5,7 +5,9 @@ import { useLocation } from 'react-router-dom';
 const ModeratorHeader = () => {
 
   const location = useLocation();
-  const {email} = location.state;
+  // const {email} = location.state;
+
+  let email = localStorage.getItem("email");
 
   return (
     <div>

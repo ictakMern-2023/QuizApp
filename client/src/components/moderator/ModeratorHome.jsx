@@ -7,8 +7,8 @@ const ModeratorHome = () => {
 
   const {email} = location.state || {email:null};
 
-  const userId =  JSON.stringify({email});
-  console.log(userId);
+  const userId = localStorage.setItem("email",email);
+  // console.log(userId);
   return (
    <>
    <div>

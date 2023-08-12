@@ -2,17 +2,21 @@ import { Box, Button, Card, CardContent, CardMedia, Typography } from '@mui/mate
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import ModeratorHeader from '../Header/ModeratorHeader';
 
 const ViewQuiz = () => {
-    
+    // fetch user
+    const user = localStorage.getItem("email");
+
     const [quizData, setQuizData] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
         axios.get("http://localhost:4010/quiz")
         .then((res) => {
+            const moderatorData = res.data.filter((quiz)=>quiz.userId === user)
             console.log(res.data);
-            setQuizData(res.data);
+            setQuizData(moderatorData);
         })
         .catch((err) => console.log(err));
     }, []);
@@ -26,6 +30,8 @@ const ViewQuiz = () => {
     }
 
     return (
+       <>
+        <ModeratorHeader/>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
             <Box
                 display='flex'
@@ -49,6 +55,7 @@ const ViewQuiz = () => {
                 </div>
             </Box>
         </div>
+       </>
     );
 }
 

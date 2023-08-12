@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Box, Button,  TextField } from '@mui/material';
 import axios from 'axios';
+import Header from '../Common/Heder';
 
 
 const Registration = () => {
@@ -98,6 +99,7 @@ const Registration = () => {
    
   return (
     <>
+    <Header/>
         <div style={{ paddingTop: '120px', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '10px' }}>
       <Box style={{ p: 3, bgcolor: '#cfe8fc', display: 'flex', flexDirection: 'column', alignItems: 'center',width:'60vh' }}>
         <TextField

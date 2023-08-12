@@ -1,6 +1,8 @@
 import React from 'react'
 import { AppBar, Toolbar, Typography } from '@mui/material';
 import { useLocation } from 'react-router-dom';
+import PersonIcon from '@mui/icons-material/Person';
+import { Link } from 'react-router-dom';
 
 const ModeratorHeader = () => {
 
@@ -43,6 +45,9 @@ const ModeratorHeader = () => {
             User :{email}
           </Typography>
 
+        </div>
+        <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+          <Link to='/profileViewAndEdit'><PersonIcon style={{height:'50px',width:'50px'}}/></Link>
         </div>
         
       </Toolbar>

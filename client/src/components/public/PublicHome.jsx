@@ -8,6 +8,7 @@ const PublicHome = () => {
 
   const location = useLocation();
   const {email} = location.state;
+  localStorage.setItem("email",email);
 
   const navigate = useNavigate();
 

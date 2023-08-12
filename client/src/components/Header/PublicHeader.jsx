@@ -1,6 +1,7 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography } from '@mui/material';
-
+import { AppBar, Button, Toolbar, Typography } from '@mui/material';
+import PersonIcon from '@mui/icons-material/Person';
+import { Link } from 'react-router-dom';
 
 
 const PublicHeader = () => {
@@ -41,6 +42,9 @@ const PublicHeader = () => {
             User :{UserId}
           </Typography>
 
+        </div>
+        <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+          <Link to='/profileViewAndEdit'><PersonIcon style={{height:'50px',width:'50px'}}/></Link>
         </div>
         
       </Toolbar>

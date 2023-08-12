@@ -35,4 +35,26 @@ UserRouter.post('/login' ,(req,res)=>{
     
 } );
 
+UserRouter.get('/userdata', async(req,res)=>{
+    try{
+        const data = await UserModel.find();
+        res.json(data);
+    }
+    catch(err){
+        res.status(500).json(err);
+    }
+});
+
+UserRouter.put('/userUpdate/:id', async(req,res)=>{
+    try{
+        let id = req.params.id;
+        const data = await UserModel.findByIdAndUpdate(id, req.body);
+        data.save();
+        res.json("success");
+    }
+    catch(err){
+        res.status(500).json(err);
+    }
+})
+
 module.exports = UserRouter;

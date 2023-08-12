@@ -19,6 +19,7 @@ import ViewAndApprove from "./components/admin/ViewAndApprove";
 import ViewAllPending from "./components/admin/ViewAllPending";
 import AttemptQuiz from "./components/public/AttemptQuiz";
 import Result from "./components/public/Result";
+import ProfileViewAndEdit from "./components/Profile/ProfileViewAndEdit";
 
 
 
@@ -61,6 +62,8 @@ const  App=()=> {
         <Route path="/viewAndApprove" element={<ViewAndApprove/>} />
         <Route path="/attemptquiz" element={<AttemptQuiz />} />
         <Route path='/result' element={<Result />} />
+
+        <Route path="/profileViewAndEdit" element={<ProfileViewAndEdit/>} />
      
       </Routes>
       

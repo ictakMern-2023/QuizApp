@@ -3,6 +3,7 @@ import ModeratorHeader from '../Header/ModeratorHeader'
 import ModeratorMain from './ModeratorMain'
 import { useLocation } from 'react-router-dom';
 import backgroundimg from "../moderator/moderator.jpg";
+import { Typography } from '@mui/material';
 const ModeratorHome = () => {
   const location = useLocation();
 
@@ -17,8 +18,7 @@ const ModeratorHome = () => {
     <ModeratorMain />
    </div>
      <div style={{paddingLeft:'300px'}}>
-      <h2>Moderator home</h2>
-      <h3>{email}</h3>
+      <Typography variant='h5' fontStyle='italic' fontWeight='bold' >Welcome ..{email}</Typography>
       <div
         style={{
           backgroundImage: `url(${backgroundimg})`,

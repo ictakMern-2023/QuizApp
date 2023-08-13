@@ -2,8 +2,8 @@ import { Box, Button, Card, CardActions, CardContent, FormControlLabel, Radio, R
 import React, { useEffect, useState } from "react";
 import { useLocation,useNavigate } from "react-router-dom";
 import axios from 'axios';
-import PublicHeader from '../Header/PublicHeader';
-
+import AdminHeader from '../Header/AdminHeader';
+import Main from '../admin/Main';
 
 const ViewAndApprove =()=>{
     const naviagate = useNavigate(); //for navigation purpose
@@ -67,8 +67,11 @@ const ViewAndApprove =()=>{
         })
     }
     return(
-         
-        <div style={{display:'flex',justifyContent:'center',alignItems:'center',minHeight:'100vh',backgroundColor:'#c71585'}}>
+        <>
+        <AdminHeader/>
+        <Main/>
+             
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center',minHeight:'100vh',backgroundColor:'#D9E3F0'}}>
            <Box
                 display='flex'
                 alignItems='center'
@@ -114,6 +117,7 @@ const ViewAndApprove =()=>{
             </Box>
 
         </div>
+        </>
     )
 }
 

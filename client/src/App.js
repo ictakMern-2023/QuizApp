@@ -23,6 +23,7 @@ import ProfileViewAndEdit from "./components/Profile/ProfileViewAndEdit";
 import ViewAllQuiz from "./components/admin/ViewAllQuiz";
 import ScoreBord from "./components/admin/ScoreBord";
 import Profile from "./components/public/Profile";
+import Quizz from "./components/public/Quizz";
 
 
 
@@ -70,6 +71,8 @@ const  App=()=> {
         <Route path="/ViewAllQuiz" element={<ViewAllQuiz/>} />
         <Route path="/scoreTable" element={<ScoreBord/>} />
         <Route path ="/profilepublic" element={<Profile/>} />
+
+        <Route path ="/publicquizz" element={<Quizz/>} />
      
       </Routes>
       

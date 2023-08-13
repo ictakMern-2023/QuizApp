@@ -26,7 +26,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 const drawerWidth = 240;
 
-export default function Main() {
+export default function Main12() {
 	const [customerOptionsVisible, setCustomerOptionsVisible] = React.useState(false);
 
 	const handleCustomerClick = () => {
@@ -98,10 +98,10 @@ export default function Main() {
 					{customerOptionsVisible && (
 						<>
 							<ListItem disablePadding>
-								<Link to="/ViewAllQuiz" style={{ textDecoration: 'none', color: 'inherit' }}>
+								<Link to="/publicquizz" style={{ textDecoration: 'none', color: 'inherit' }}>
 									<ListItemButton>
 										<ListItemIcon>
-										<DescriptionIcon></DescriptionIcon>
+											<GroupIcon />
 										</ListItemIcon>
 										<ListItemText primary="Quizz" />
 									</ListItemButton>
@@ -111,19 +111,9 @@ export default function Main() {
 								<Link to="/viewallPending" style={{ textDecoration: 'none', color: 'inherit' }}>
 									<ListItemButton>
 										<ListItemIcon>
-										<DescriptionIcon></DescriptionIcon>
+                                        <PaidOutlinedIcon/>
 										</ListItemIcon>
-										<ListItemText primary="Approve Quiz" />
-									</ListItemButton>
-								</Link>
-							</ListItem>
-							<ListItem disablePadding>
-								<Link to="/scoreTable" style={{ textDecoration: 'none', color: 'inherit' }}>
-									<ListItemButton>
-										<ListItemIcon>
-										<DescriptionIcon></DescriptionIcon>
-										</ListItemIcon>
-										<ListItemText primary="Score Table" />
+										<ListItemText primary="Result" />
 									</ListItemButton>
 								</Link>
 							</ListItem>
@@ -175,12 +165,11 @@ export default function Main() {
 						</>
 					)} */}
 
-
+{/* 
 					<ListItem disablePadding onClick={handleInvoiceClick}>
 						<ListItemButton>
 							<ListItemIcon>
-								
-								<GroupIcon />
+								<DescriptionIcon></DescriptionIcon>
 							</ListItemIcon>
 							<ListItemText primary="Moderator" />
 						</ListItemButton>
@@ -191,8 +180,7 @@ export default function Main() {
 								<Link to="/displayInvoice" style={{ textDecoration: 'none', color: 'inherit' }}>
 									<ListItemButton>
 										<ListItemIcon>
-											{/* <FileCopyOutlinedIcon/> */}
-											<GroupIcon />
+											<FileCopyOutlinedIcon/>
 										</ListItemIcon>
 										<ListItemText primary="Manage Moderator" />
 									</ListItemButton>
@@ -210,7 +198,7 @@ export default function Main() {
 								</Link>
 							</ListItem>
 						</>
-					)}
+					)} */}
 
 
 
@@ -228,7 +216,7 @@ export default function Main() {
 					{SettingsOptionsVisible && (
 						<>
 							<ListItem disablePadding>
-								<Link to="/manageCompany" style={{ textDecoration: 'none', color: 'inherit' }}>
+								<Link to="/profilepublic" style={{ textDecoration: 'none', color: 'inherit' }}>
 									<ListItemButton>
 										<ListItemIcon>
 											<PaidOutlinedIcon/>

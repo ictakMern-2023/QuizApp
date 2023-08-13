@@ -15,7 +15,7 @@ const AdminHeader = () => {
       }}
     >
       <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'center',paddingLeft:'200px' }}>
           <Typography
             variant={'h4'}
             sx={{
@@ -27,7 +27,7 @@ const AdminHeader = () => {
               paddingLeft: '20px',
             }}
           >
-            Quiz Application
+            Quiz App
           </Typography>
         </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>

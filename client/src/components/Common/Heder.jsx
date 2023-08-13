@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link,useLocation } from 'react-router-dom';
 
 
-const Header = () => {
+const Header = (probs) => {
   const [buttonClicked, setButtonClicked] = useState(null);
 
   const handleButtonClick = (buttonType) => {
@@ -12,7 +12,6 @@ const Header = () => {
   };
 
   const location = useLocation();
-  
 
 
 
@@ -23,14 +22,14 @@ const Header = () => {
           backgroundColor: '#c71585'
         }}
       >
-       
+        <h1>{probs.username}</h1>
         <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <Typography
               variant={'h4'}
               sx={{
                 fontFamily: 'monospace',
-                fontWeight: 700,
+                fontWeight: 500,
                 letterSpacing: '.3rem',
                 color: '#f5fffa',
                 textDecoration: 'none',

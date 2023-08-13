@@ -1,7 +1,6 @@
 import React from 'react'
-import { AppBar, Button, Toolbar, Typography } from '@mui/material';
-import PersonIcon from '@mui/icons-material/Person';
-import { Link } from 'react-router-dom';
+import { AppBar, Toolbar, Typography } from '@mui/material';
+
 
 
 const PublicHeader = () => {
@@ -16,19 +15,21 @@ const PublicHeader = () => {
       }}
     >
       <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'center',paddingLeft:'100px' }}>
           <Typography
             variant={'h4'}
+            
             sx={{
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: '#f5fffa',
               textDecoration: 'none',
-              paddingLeft: '20px',
+              paddingLeft: '200px',
+
             }}
           >
-            Quizz Application
+             Quizz App
           </Typography>
         </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -42,9 +43,6 @@ const PublicHeader = () => {
             User :{UserId}
           </Typography>
 
-        </div>
-        <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-          <Link to='/profileViewAndEdit'><PersonIcon style={{height:'50px',width:'50px'}}/></Link>
         </div>
         
       </Toolbar>

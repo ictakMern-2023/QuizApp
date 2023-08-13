@@ -59,7 +59,7 @@ export default function ModeratorMain(props) {
 	};
 
 	return (
-        <div style={{paddingTop:'200px'}}>
+        <div>
             		<Box sx={{ display: 'flex' }}>
            
            <CssBaseline />
@@ -159,7 +159,7 @@ export default function ModeratorMain(props) {
                    )} */}
 
 
-                   <ListItem disablePadding onClick={handleInvoiceClick}>
+                   {/* <ListItem disablePadding onClick={handleInvoiceClick}>
                        <ListItemButton>
                            <ListItemIcon>
                              <GroupIcon />
@@ -194,7 +194,7 @@ export default function ModeratorMain(props) {
                    )}
 
 
-
+ */}
 
 
 
@@ -209,7 +209,7 @@ export default function ModeratorMain(props) {
                    {SettingsOptionsVisible && (
                        <>
                            <ListItem disablePadding>
-                               <Link to="/manageCompany" style={{ textDecoration: 'none', color: 'inherit' }}>
+                               <Link to="/profileViewAndEdit" style={{ textDecoration: 'none', color: 'inherit' }}>
                                    <ListItemButton>
                                        <ListItemIcon>
                                            <PaidOutlinedIcon/>

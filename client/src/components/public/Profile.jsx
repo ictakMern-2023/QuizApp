@@ -1,13 +1,12 @@
 import { Box, Button, Dialog, DialogActions, DialogContent, Typography,TextField } from '@mui/material'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Profile.css'
+import './profilePublic.css';
 import Avatar from '@mui/material/Avatar';
-import ModeratorHeader from '../Header/ModeratorHeader';
-import ModeratorHome from '../moderator/ModeratorHome';
-import ModeratorMain from '../moderator/ModeratorMain';
+import PublicHeader from '../Header/PublicHeader';
+import Main12 from './Main12';
 
-const ProfileViewAndEdit = () => {
+const Profile = () => {
 
     const [OpenDialog,setOpenDialog] =useState(false);
 
@@ -84,8 +83,8 @@ const ProfileViewAndEdit = () => {
 
   return (
     <>
-    <ModeratorHeader/>
-    <ModeratorMain/>
+    <PublicHeader/>
+    <Main12/>
     <div style={{paddingTop:'50px',display:'flex',justifyContent:'center',minHeight:'100vh',backgroundColor:'#dcdcdc',paddingLeft:'200px'}}>
         
         <Box
@@ -189,4 +188,4 @@ const ProfileViewAndEdit = () => {
   )
 }
 
-export default ProfileViewAndEdit
+export default Profile;

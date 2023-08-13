@@ -2,12 +2,14 @@ import { Box, Button, Card, CardActions, CardContent, FormControlLabel, Radio, R
 import React, { useEffect, useState } from 'react';
 import {  useLocation,useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import ModeratorMain from './ModeratorMain';
+import ModeratorHeader from '../Header/ModeratorHeader';
 
 const ViewQuestion = () => {
     
   const [quizData, setQuizData] = useState([]);
     const location = useLocation();
-
+    const user = localStorage.getItem("email");
     const navigate = useNavigate();
 
     // recieve the id that passfrom the previouse page
@@ -55,7 +57,9 @@ const deleteQuestian=(id)=>{
 
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <><div>
+            <ModeratorMain/><ModeratorHeader></ModeratorHeader>
+            </div><div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',}}>
             <Box
                 display='flex'
                 alignItems='center'
@@ -64,7 +68,7 @@ const deleteQuestian=(id)=>{
                 padding='20px'
                 bgcolor='#8fbc8f'
             >
-                <div style={{ display: 'grid', gap: '20px', paddingBottom: '60px', paddingTop: '30px', padding: '20px' }}>
+                <div style={{ display: 'grid', gap: '20px', paddingBottom: '60px', padding: '20px' }}>
                     <Card>
                         <CardContent>
                             <Typography variant='h6'>{quizData.topic}</Typography>
@@ -80,9 +84,8 @@ const deleteQuestian=(id)=>{
                                                 key={optIndex}
                                                 value={option}
                                                 control={<Radio />}
-                                                label={option}
-                                            />
-                                            
+                                                label={option} />
+
                                         ))}
                                     </RadioGroup>
                                     <Typography variant='subtitle1'>CorrectAnswer :{question.correctAnswer}</Typography>
@@ -90,14 +93,14 @@ const deleteQuestian=(id)=>{
                             ))}
                         </CardContent>
                         <CardActions>
-                            <Button onClick={handleNavigateToUpdate}>Update</Button><br/>
-                            <Button onClick={()=>{deleteQuestian(quizData._id)}}>Delete</Button>
+                            <Button onClick={handleNavigateToUpdate}>Update</Button><br />
+                            <Button onClick={() => { deleteQuestian(quizData._id); } }>Delete</Button>
                         </CardActions>
                     </Card>
                 </div>
             </Box>
-            
-        </div>
+
+        </div></>
     );
 }
 

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import AdminHeader from '../Header/AdminHeader';
+import Main from './Main';
 
 const ViewAllPending = () => {
     const [dt,setDt] = useState([]);
@@ -39,7 +40,8 @@ const ViewAllPending = () => {
   return (
     <>
       <AdminHeader/>
-      <div style={{ backgroundColor: 'purple', display: 'flex', flexDirection: 'column', alignItems: 'center',  minHeight: '100vh',paddingTop:'70px' }}>
+      <Main/>
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center',  minHeight: '100vh',paddingTop:'70px',paddingLeft:'230px' }}>
       <Typography variant='h3' style={{ marginBottom: '20px',color:'#ffffff' }}>Approve Quiz</Typography>
 
       <Box
@@ -48,7 +50,7 @@ const ViewAllPending = () => {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#c71585',
+          backgroundColor: '#D9E3F0',
           padding: '20px',
         }}
       >

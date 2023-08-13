@@ -27,6 +27,9 @@ app.use(userRegRoutes);
 const tagRouter=require('./router/addtags')
 app.use('/',tagRouter);
 
+const resultRouter=require('./router/results')
+app.use('/',resultRouter)
+
 app.use(quizRouters);
 
 // port

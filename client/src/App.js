@@ -20,6 +20,9 @@ import ViewAllPending from "./components/admin/ViewAllPending";
 import AttemptQuiz from "./components/public/AttemptQuiz";
 import Result from "./components/public/Result";
 import ProfileViewAndEdit from "./components/Profile/ProfileViewAndEdit";
+import ViewAllQuiz from "./components/admin/ViewAllQuiz";
+import ScoreBord from "./components/admin/ScoreBord";
+import Profile from "./components/public/Profile";
 
 
 
@@ -64,6 +67,9 @@ const  App=()=> {
         <Route path='/result' element={<Result />} />
 
         <Route path="/profileViewAndEdit" element={<ProfileViewAndEdit/>} />
+        <Route path="/ViewAllQuiz" element={<ViewAllQuiz/>} />
+        <Route path="/scoreTable" element={<ScoreBord/>} />
+        <Route path ="/profilepublic" element={<Profile/>} />
      
       </Routes>
       

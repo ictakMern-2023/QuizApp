@@ -1,88 +1,51 @@
-import React, { useEffect, useState } from 'react'
-import PublicHeader from '../Header/PublicHeader'
+import React, { useEffect, useState } from 'react';
+import PublicHeader from '../Header/PublicHeader';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Box, Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { AppBar, Box, Card, CardMedia, Typography } from '@mui/material';
+import Main12 from './Main12';
+//import animatedIcon from './path/to/your/animated-icon.gif'; // Replace with the actual path to your GIF image
 
 const PublicHome = () => {
-
   const location = useLocation();
-  const {email} = location.state;
-  localStorage.setItem("email",email);
-
+  const { email } = location.state;
   const navigate = useNavigate();
+  const [dt, setDt] = useState([]);
+  localStorage.setItem("email",email)
 
-  const [dt,setDt] = useState([]);
+  const HandleOpenMore = (id) => {
+    navigate('/attemptquiz', {
+      state: { id: id, email: email },
+    });
+  };
 
-  const HandleOpenMore=(id)=>{
-    navigate('/attemptquiz',{
-        state:{id:id,email:email},
-    }
-    
-    );
-
-}
-
-
-  useEffect(()=>{axios.get("http://localhost:4010/quiz")
-  .then((res)=>{ 
-          console.log(res.data);
-          setDt(res.data);   
-  })
-  .catch((err)=>{
-      console.log(err);
-  })
-},[])
+  useEffect(() => {
+    axios
+      .get('http://localhost:4010/quiz')
+      .then((res) => {
+        console.log(res.data);
+        setDt(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
-   <>
-    <PublicHeader/>
-     <div style={{paddingTop:'150px'}}>
-      <h3>Public Home</h3>
-      <h4>welcome {email}</h4>
+    <>
+      <Main12></Main12>
+     <PublicHeader></PublicHeader>
+      
 
-      <Box
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: '#c71585',
-          padding: '20px',
-        }}
-      >
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '20px', padding: '20px' }}>
-          {/* Card Component */}
-          {dt.map((value,i)=>{
-            if(value.status === 'approved')
-            return(
-             <Card key={i}>
-             <CardMedia>
-                <Box color='#708090'>
-                <Typography variant='h3'>{value.topic}</Typography>
-                <Typography variant='h4'>{value.sub}</Typography>
+      <div style={{ paddingLeft: '300px' }}>
+        <h3>Public Home</h3>
+        <h4>welcome {email}</h4><img src="https://blog.learnchamp.com/hubfs/Fragezeichen-1.gif" alt="Animated Icon" style={{ width: '100px', height: '100px' }} />
 
-                </Box>
-               
-             </CardMedia>
-             <CardContent>
-               <Button variant='contained' color='primary'onClick={()=>HandleOpenMore(value._id)}>
-                 START QUIZ
-               </Button>
-               
-               
-             </CardContent>
-           </Card>
-            )
-})}
-         
-          {/* End of Card Component */}
-        </div>
-      </Box>
 
-    </div>
-   </>
-  )
-}
+        
+      </div>
+    </>
+  );
+};
 
-export default PublicHome
+export default PublicHome;

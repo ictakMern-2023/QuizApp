@@ -68,7 +68,7 @@ const CreateQuiz = () => {
           alert("Quiz data saved successfully");
           console.log("success");
           setTopic('');
-          setSub('');
+          setsub('');
           setDuration('');
           setQuestions([{ question: '', options: ['', '', '', ''], correctAnswer: '' }]);
         })
